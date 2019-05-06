@@ -1,0 +1,1749 @@
+@import url("https://fonts.googleapis.com/css?family=Coming+Soon");
+* {
+  transition: 2s;
+}
+
+html, body {
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  background-color: #242026;
+}
+
+label {
+  cursor: pointer;
+}
+
+input {
+  display: none;
+}
+
+.hint {
+  color: rgba(255, 255, 255, 0.5);
+  font-family: 'Coming Soon', cursive;
+  margin: 10px auto;
+}
+
+.card {
+  width: 700px;
+  height: 460px;
+  min-width: 700px;
+  min-height: 460px;
+  background-image: linear-gradient(40deg, #fff3d8, #ffd987, #cc921e);
+  background-size: 200% 100%;
+  background-position: 0;
+  border-radius: 20px;
+  position: relative;
+  box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.5);
+  overflow: hidden;
+}
+
+.title {
+  font-family: 'Coming Soon', cursive;
+  font-size: 60px;
+  margin: 40px 45px;
+  color: #4c2a1e;
+  -webkit-transform: rotate(-3deg);
+          transform: rotate(-3deg);
+  position: absolute;
+  z-index: 999;
+  -webkit-animation: titleAni 2s infinite;
+          animation: titleAni 2s infinite;
+}
+.title span {
+  display: block;
+  line-height: 1.3;
+}
+
+.cake {
+  width: 260px;
+  height: 65px;
+  position: absolute;
+  top: 56%;
+  left: 17%;
+  z-index: 999;
+}
+
+.candle-group {
+  width: 20%;
+  height: 65%;
+  margin: auto;
+  display: flex;
+  justify-content: space-around;
+}
+.candle-group .light {
+  width: 100px;
+  height: 100px;
+  position: absolute;
+  border-radius: 50%;
+  box-shadow: 0 0 50px rgba(255, 255, 255, 0.8);
+  top: -80%;
+  -webkit-animation: lightAni 1s infinite;
+          animation: lightAni 1s infinite;
+}
+.candle-group .smoke {
+  width: 100px;
+  height: 100px;
+  position: absolute;
+}
+.candle-group .smoke:before, .candle-group .smoke:after {
+  content: '';
+  display: none;
+  background-color: rgba(179, 177, 181, 0.8);
+  box-shadow: 0 0 5px rgba(179, 177, 181, 0.8);
+  position: absolute;
+}
+.candle-group .candle {
+  background: #ff593f;
+  width: 20%;
+  height: 100%;
+  position: relative;
+  border: 4px solid #4c2a1e;
+  border-radius: 5px 5px 0 0;
+  box-shadow: -3px 0px rgba(0, 0, 0, 0.15) inset;
+}
+.candle-group .candle:before {
+  content: '';
+  display: block;
+  background: white;
+  width: 100%;
+  height: 35%;
+  -webkit-transform: skewY(-30deg);
+          transform: skewY(-30deg);
+  position: absolute;
+  top: 30%;
+  box-shadow: -3px 0px rgba(0, 0, 0, 0.15) inset;
+}
+.candle-group .candle .fire {
+  width: 130%;
+  height: 45%;
+  position: absolute;
+  background: #ffcc66;
+  top: 0;
+  left: 100%;
+  border-radius: 100% 0 60% 50% / 60% 0 100% 50%;
+  border: 4px solid #4c2a1e;
+  -webkit-transform: translate(-40%, -100%) rotate(-28deg);
+          transform: translate(-40%, -100%) rotate(-28deg);
+  -webkit-transform-origin: 50% 100%;
+          transform-origin: 50% 100%;
+  box-shadow: -3px 0px rgba(0, 0, 0, 0.15) inset;
+  -webkit-animation: fireAni 1s infinite;
+          animation: fireAni 1s infinite;
+}
+
+.cake-top {
+  width: 64%;
+  height: 90%;
+  background-color: #54728c;
+  margin: auto;
+  position: relative;
+  border-radius: 10px 10px 0 0;
+  border-top: 4px solid #4c2a1e;
+  border-left: 4px solid #4c2a1e;
+  border-right: 4px solid #4c2a1e;
+  box-shadow: -25px 0px rgba(0, 0, 0, 0.15) inset;
+}
+.cake-top:before {
+  content: '';
+  display: block;
+  width: 100%;
+  height: 30%;
+  background-color: #85b6bf;
+  position: relative;
+  top: 50%;
+  -webkit-transform: translatey(-50%);
+          transform: translatey(-50%);
+  box-shadow: -25px 0px rgba(0, 0, 0, 0.15) inset;
+}
+
+.cake-bottom {
+  width: 80%;
+  height: 100%;
+  background-color: #fcdda4;
+  border-radius: 10px 10px 0 0;
+  margin: auto;
+  border-left: 4px solid #4c2a1e;
+  border-right: 4px solid #4c2a1e;
+  border-top: 4px solid #4c2a1e;
+  box-shadow: -35px 0px rgba(0, 0, 0, 0.15) inset;
+}
+.cake-bottom .butter {
+  width: 100%;
+  height: 55%;
+  background-color: #fc7164;
+  display: flex;
+  position: relative;
+  border-radius: 7px 7px 0 0;
+  box-shadow: -35px 0px rgba(0, 0, 0, 0.15) inset;
+}
+.cake-bottom .butter .butter-circle {
+  width: 100%;
+  height: 100%;
+  border-radius: 100%;
+  position: relative;
+  top: 40%;
+  background-color: #fc7164;
+}
+.cake-bottom .butter .butter-circle:nth-of-type(6) {
+  box-shadow: -35px 0px rgba(0, 0, 0, 0.15) inset;
+}
+
+.plate {
+  width: 100%;
+  height: 20%;
+  border-radius: 10px;
+  background-color: #4c2a1e;
+  left: -50%;
+  box-shadow: -45px 0px rgba(0, 0, 0, 0.15) inset;
+}
+
+.boy {
+  width: 230px;
+  height: 280px;
+  position: absolute;
+  top: 15%;
+  left: 55%;
+  z-index: 99;
+}
+
+.boy-head {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  z-index: 99;
+}
+
+.hairs {
+  width: 110%;
+  height: 60%;
+  position: absolute;
+  z-index: 10;
+  -webkit-transform: translatex(-4%) rotate(7deg);
+          transform: translatex(-4%) rotate(7deg);
+}
+.hairs [class^="hair"] {
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-color: transparent transparent #4c2a1e transparent;
+  display: inline-block;
+  position: absolute;
+}
+.hairs .hair1 {
+  border-width: 0 60px 120px 40px;
+  -webkit-transform: rotate(-30deg);
+          transform: rotate(-30deg);
+  top: -5%;
+  left: -8%;
+}
+.hairs .hair2 {
+  border-width: 0 50px 135px 50px;
+  -webkit-transform: rotate(-15deg);
+          transform: rotate(-15deg);
+  top: -25%;
+  left: 5%;
+}
+.hairs .hair3 {
+  border-width: 0 60px 130px 50px;
+  -webkit-transform: rotate(-5deg);
+          transform: rotate(-5deg);
+  top: -30%;
+  left: 20%;
+}
+.hairs .hair4 {
+  border-width: 0 50px 140px 60px;
+  -webkit-transform: rotate(5deg);
+          transform: rotate(5deg);
+  top: -35%;
+  left: 35%;
+}
+.hairs .hair5 {
+  border-width: 0 60px 130px 50px;
+  -webkit-transform: rotate(15deg);
+          transform: rotate(15deg);
+  top: -25%;
+  left: 55%;
+}
+.hairs .hair6 {
+  border-width: 0 50px 120px 50px;
+  -webkit-transform: rotate(20deg);
+          transform: rotate(20deg);
+  top: -10%;
+  left: 70%;
+}
+
+.face {
+  width: 100%;
+  height: 100%;
+  border-radius: 150px 150px 160px 130px;
+  background-color: #ffddad;
+  position: relative;
+  border: 4px solid #4c2a1e;
+  box-shadow: -20px 0px rgba(0, 0, 0, 0.15) inset;
+}
+.face .eyebrows {
+  position: relative;
+  top: 35%;
+  left: -10%;
+  width: 100%;
+  height: 15%;
+  -webkit-animation: eyebrowsAni 2s infinite;
+          animation: eyebrowsAni 2s infinite;
+}
+.face .eyebrows:before, .face .eyebrows:after {
+  content: "";
+  display: inline-block;
+  width: 0;
+  height: 0;
+  border-style: solid;
+  position: absolute;
+  z-index: 10;
+  -webkit-filter: drop-shadow(5px 5px 5px rgba(0, 0, 0, 0.3));
+          filter: drop-shadow(5px 5px 5px rgba(0, 0, 0, 0.3));
+}
+.face .eyebrows:before {
+  border-width: 30px 0 0 100px;
+  border-color: transparent transparent transparent #4c2a1e;
+  -webkit-transform: rotate(12deg);
+          transform: rotate(12deg);
+  left: -3%;
+}
+.face .eyebrows:after {
+  border-width: 0 0 30px 120px;
+  border-color: transparent transparent #4c2a1e transparent;
+  -webkit-transform: rotate(-12deg);
+          transform: rotate(-12deg);
+  left: 58%;
+  top: -1%;
+}
+.face .blush {
+  top: 65%;
+  position: absolute;
+  width: 70%;
+  height: 7%;
+  z-index: 999;
+  -webkit-animation: blushAni 2s infinite;
+          animation: blushAni 2s infinite;
+}
+.face .blush:before, .face .blush:after {
+  content: "";
+  display: block;
+  position: absolute;
+  background-color: #ffa49e;
+  border-radius: 45%;
+  box-shadow: -8px -5px rgba(0, 0, 0, 0.1) inset;
+  border: 4px solid #4c2a1e;
+}
+.face .blush:before {
+  width: 25%;
+  height: 100%;
+  left: -20%;
+}
+.face .blush:after {
+  width: 30%;
+  height: 105%;
+  left: 100%;
+  top: 10%;
+}
+.face .eyes {
+  position: relative;
+  top: 37%;
+  left: 8%;
+  width: 90%;
+  height: 11%;
+}
+.face .eyes:before, .face .eyes:after {
+  content: "";
+  display: inline-block;
+  width: 18px;
+  height: 100%;
+  background-color: #4c2a1e;
+  border-radius: 45%;
+  position: absolute;
+  z-index: 10;
+  -webkit-animation: blink 2s infinite;
+          animation: blink 2s infinite;
+}
+.face .eyes:before {
+  left: 0;
+}
+.face .eyes:after {
+  left: 55%;
+}
+.face .mouth {
+  position: relative;
+  top: 45%;
+  left: 24%;
+  width: 20%;
+  height: 20%;
+  box-shadow: 15px 0px rgba(0, 0, 0, 0.15) inset;
+  border-radius: 48%;
+  background-color: #4c2a1e;
+  -webkit-transform: rotate(-5deg);
+          transform: rotate(-5deg);
+  -webkit-transform-origin: 0 50%;
+          transform-origin: 0 50%;
+  -webkit-animation: breathMouth 2s infinite;
+          animation: breathMouth 2s infinite;
+}
+
+.boy-body {
+  width: 36%;
+  height: 26.8%;
+  position: relative;
+  margin: auto;
+}
+
+.body {
+  width: 90%;
+  height: 80%;
+  position: relative;
+  z-index: 50;
+  border-radius: 50% 50% 0 0;
+  background-color: #4b84d8;
+  border: 4px solid #4c2a1e;
+  top: -11%;
+  box-shadow: -25px 0px rgba(0, 0, 0, 0.15) inset;
+  z-index: 8;
+  overflow: hidden;
+  -webkit-animation: breath 2s infinite;
+          animation: breath 2s infinite;
+}
+.body:before, .body:after {
+  content: "";
+  display: block;
+  width: 12px;
+  height: 12px;
+  background-color: rgba(255, 255, 255, 0.9);
+  border: 4px solid #4c2a1e;
+  border-radius: 50%;
+  position: relative;
+  top: 14%;
+  left: 6%;
+  margin: 10px;
+  box-shadow: -3px 0px rgba(0, 0, 0, 0.15) inset;
+}
+
+.hands .left-hand, .hands .right-hand {
+  width: 35%;
+  height: 130%;
+  border-radius: 20px;
+  background-color: #ffddad;
+  position: absolute;
+  border: 4px solid #4c2a1e;
+  box-shadow: -10px 0px rgba(0, 0, 0, 0.15) inset;
+  z-index: 1000;
+  -webkit-transform-origin: center top;
+          transform-origin: center top;
+}
+.hands .left-hand:before, .hands .right-hand:before {
+  content: '';
+  display: block;
+  width: 100%;
+  height: 30%;
+  background-color: #4b84d8;
+  box-shadow: -10px 0px rgba(0, 0, 0, 0.15) inset;
+  border: 4px solid #4c2a1e;
+  border-radius: 20px 20px 0 0;
+  position: absolute;
+  top: -4px;
+  left: -4px;
+}
+.hands .left-hand {
+  top: 25%;
+  left: 4px;
+  -webkit-transform: rotate(100deg);
+          transform: rotate(100deg);
+  z-index: -1;
+  -webkit-animation: leftHandAni 2s infinite;
+          animation: leftHandAni 2s infinite;
+}
+.hands .right-hand {
+  top: 25%;
+  left: 50%;
+  -webkit-transform: rotate(-120deg);
+          transform: rotate(-120deg);
+  -webkit-animation: rightHandAni 2s infinite;
+          animation: rightHandAni 2s infinite;
+}
+
+.desk {
+  width: 100%;
+  height: 15%;
+  border-top: 4px solid #4c2a1e;
+  position: absolute;
+  top: 88%;
+  background-color: #f4b7b5;
+  z-index: 50;
+  box-shadow: 0px -20px rgba(0, 0, 0, 0.2) inset;
+}
+
+.sprinkles {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+.sprinkles [class^='sprinkle'] {
+  width: 5px;
+  height: 10px;
+  border-radius: 50%;
+  -webkit-animation: sprinkleAni 5s infinite;
+          animation: sprinkleAni 5s infinite;
+}
+.sprinkles .sprinkle1 {
+  position: absolute;
+  left: 94.3345032176%;
+  top: -1.3136105655%;
+  background-color: #b9acc6;
+  -webkit-animation-delay: -0.1s;
+          animation-delay: -0.1s;
+}
+.sprinkles .sprinkle2 {
+  position: absolute;
+  left: 29.6488414691%;
+  top: 48.0347317434%;
+  background-color: #a7ab5b;
+  -webkit-animation-delay: -0.2s;
+          animation-delay: -0.2s;
+}
+.sprinkles .sprinkle3 {
+  position: absolute;
+  left: 73.792204882%;
+  top: 76.7989115216%;
+  background-color: #b8c0df;
+  -webkit-animation-delay: -0.3s;
+          animation-delay: -0.3s;
+}
+.sprinkles .sprinkle4 {
+  position: absolute;
+  left: 22.2559916383%;
+  top: 49.2784859337%;
+  background-color: #f09f74;
+  -webkit-animation-delay: -0.4s;
+          animation-delay: -0.4s;
+}
+.sprinkles .sprinkle5 {
+  position: absolute;
+  left: 1.9187228882%;
+  top: -8.9807290994%;
+  background-color: #b8e1cc;
+  -webkit-animation-delay: -0.5s;
+          animation-delay: -0.5s;
+}
+.sprinkles .sprinkle6 {
+  position: absolute;
+  left: 81.8997988625%;
+  top: 17.8408363729%;
+  background-color: #ffd37a;
+  -webkit-animation-delay: -0.6s;
+          animation-delay: -0.6s;
+}
+.sprinkles .sprinkle7 {
+  position: absolute;
+  left: 91.6694075298%;
+  top: 58.992951327%;
+  background-color: #ff52b4;
+  -webkit-animation-delay: -0.7s;
+          animation-delay: -0.7s;
+}
+.sprinkles .sprinkle8 {
+  position: absolute;
+  left: 53.1230637418%;
+  top: 24.378145516%;
+  background-color: #d75c5b;
+  -webkit-animation-delay: -0.8s;
+          animation-delay: -0.8s;
+}
+.sprinkles .sprinkle9 {
+  position: absolute;
+  left: 29.6796810588%;
+  top: 62.79801741%;
+  background-color: #ec7c92;
+  -webkit-animation-delay: -0.9s;
+          animation-delay: -0.9s;
+}
+.sprinkles .sprinkle10 {
+  position: absolute;
+  left: 47.9008593096%;
+  top: 77.9661615335%;
+  background-color: #dd73ce;
+  -webkit-animation-delay: -1s;
+          animation-delay: -1s;
+}
+.sprinkles .sprinkle11 {
+  position: absolute;
+  left: 35.3975446373%;
+  top: 70.0096594297%;
+  background-color: #9f7c7f;
+  -webkit-animation-delay: -1.1s;
+          animation-delay: -1.1s;
+}
+.sprinkles .sprinkle12 {
+  position: absolute;
+  left: 6.5042906599%;
+  top: -0.9207019628%;
+  background-color: #ff9592;
+  -webkit-animation-delay: -1.2s;
+          animation-delay: -1.2s;
+}
+.sprinkles .sprinkle13 {
+  position: absolute;
+  left: 97.9255342277%;
+  top: 45.3504379353%;
+  background-color: #ffc2b0;
+  -webkit-animation-delay: -1.3s;
+          animation-delay: -1.3s;
+}
+.sprinkles .sprinkle14 {
+  position: absolute;
+  left: 99.8541108353%;
+  top: 72.2044635507%;
+  background-color: #ff9e76;
+  -webkit-animation-delay: -1.4s;
+          animation-delay: -1.4s;
+}
+.sprinkles .sprinkle15 {
+  position: absolute;
+  left: 20.5289959983%;
+  top: 70.6310337915%;
+  background-color: #ff5c5c;
+  -webkit-animation-delay: -1.5s;
+          animation-delay: -1.5s;
+}
+.sprinkles .sprinkle16 {
+  position: absolute;
+  left: 19.8060065189%;
+  top: 36.909757072%;
+  background-color: #aad3a9;
+  -webkit-animation-delay: -1.6s;
+          animation-delay: -1.6s;
+}
+.sprinkles .sprinkle17 {
+  position: absolute;
+  left: 14.4672336332%;
+  top: -9.3935007085%;
+  background-color: #9fd2d7;
+  -webkit-animation-delay: -1.7s;
+          animation-delay: -1.7s;
+}
+.sprinkles .sprinkle18 {
+  position: absolute;
+  left: 47.4131370302%;
+  top: 16.6269934084%;
+  background-color: #da97e4;
+  -webkit-animation-delay: -1.8s;
+          animation-delay: -1.8s;
+}
+.sprinkles .sprinkle19 {
+  position: absolute;
+  left: 40.8692015984%;
+  top: 70.4913979459%;
+  background-color: #ffdd9a;
+  -webkit-animation-delay: -1.9s;
+          animation-delay: -1.9s;
+}
+.sprinkles .sprinkle20 {
+  position: absolute;
+  left: 1.791822588%;
+  top: 50.5213648997%;
+  background-color: #ffdb99;
+  -webkit-animation-delay: -2s;
+          animation-delay: -2s;
+}
+.sprinkles .sprinkle21 {
+  position: absolute;
+  left: 87.2930258079%;
+  top: 16.4365709428%;
+  background-color: #ccbacb;
+  -webkit-animation-delay: -2.1s;
+          animation-delay: -2.1s;
+}
+.sprinkles .sprinkle22 {
+  position: absolute;
+  left: 41.8465336609%;
+  top: 7.0592397234%;
+  background-color: #c97ad5;
+  -webkit-animation-delay: -2.2s;
+          animation-delay: -2.2s;
+}
+.sprinkles .sprinkle23 {
+  position: absolute;
+  left: 52.7167879696%;
+  top: 33.58645698%;
+  background-color: #ffcc57;
+  -webkit-animation-delay: -2.3s;
+          animation-delay: -2.3s;
+}
+.sprinkles .sprinkle24 {
+  position: absolute;
+  left: 36.0263378289%;
+  top: 72.6662046475%;
+  background-color: #f79b5b;
+  -webkit-animation-delay: -2.4s;
+          animation-delay: -2.4s;
+}
+.sprinkles .sprinkle25 {
+  position: absolute;
+  left: 97.3085828154%;
+  top: 1.856043065%;
+  background-color: #9793ce;
+  -webkit-animation-delay: -2.5s;
+          animation-delay: -2.5s;
+}
+.sprinkles .sprinkle26 {
+  position: absolute;
+  left: 40.3782454146%;
+  top: 28.1838415124%;
+  background-color: #ffa8b6;
+  -webkit-animation-delay: -2.6s;
+          animation-delay: -2.6s;
+}
+.sprinkles .sprinkle27 {
+  position: absolute;
+  left: 91.4092373417%;
+  top: 19.5742427741%;
+  background-color: #ff667e;
+  -webkit-animation-delay: -2.7s;
+          animation-delay: -2.7s;
+}
+.sprinkles .sprinkle28 {
+  position: absolute;
+  left: 76.4207077596%;
+  top: 39.5551488823%;
+  background-color: #eb6955;
+  -webkit-animation-delay: -2.8s;
+          animation-delay: -2.8s;
+}
+.sprinkles .sprinkle29 {
+  position: absolute;
+  left: 51.4272787321%;
+  top: 31.7703504169%;
+  background-color: #ff9c9e;
+  -webkit-animation-delay: -2.9s;
+          animation-delay: -2.9s;
+}
+.sprinkles .sprinkle30 {
+  position: absolute;
+  left: 58.9872352047%;
+  top: -3.420935185%;
+  background-color: #ff52ca;
+  -webkit-animation-delay: -3s;
+          animation-delay: -3s;
+}
+.sprinkles .sprinkle31 {
+  position: absolute;
+  left: 53.9369391837%;
+  top: 63.2315040311%;
+  background-color: #dae38a;
+  -webkit-animation-delay: -3.1s;
+          animation-delay: -3.1s;
+}
+.sprinkles .sprinkle32 {
+  position: absolute;
+  left: 91.3260281111%;
+  top: -4.247357684%;
+  background-color: #a68b7f;
+  -webkit-animation-delay: -3.2s;
+          animation-delay: -3.2s;
+}
+.sprinkles .sprinkle33 {
+  position: absolute;
+  left: 98.4969619307%;
+  top: -6.4018574659%;
+  background-color: #a56e6c;
+  -webkit-animation-delay: -3.3s;
+          animation-delay: -3.3s;
+}
+.sprinkles .sprinkle34 {
+  position: absolute;
+  left: 3.8403621747%;
+  top: -16.2679559424%;
+  background-color: #ffc9da;
+  -webkit-animation-delay: -3.4s;
+          animation-delay: -3.4s;
+}
+.sprinkles .sprinkle35 {
+  position: absolute;
+  left: 27.8714186666%;
+  top: 14.2023311214%;
+  background-color: #fd8be0;
+  -webkit-animation-delay: -3.5s;
+          animation-delay: -3.5s;
+}
+.sprinkles .sprinkle36 {
+  position: absolute;
+  left: 94.4542726315%;
+  top: 45.3766475623%;
+  background-color: #c8d4d7;
+  -webkit-animation-delay: -3.6s;
+          animation-delay: -3.6s;
+}
+.sprinkles .sprinkle37 {
+  position: absolute;
+  left: 47.9723976692%;
+  top: 30.6345781465%;
+  background-color: #ff705b;
+  -webkit-animation-delay: -3.7s;
+          animation-delay: -3.7s;
+}
+.sprinkles .sprinkle38 {
+  position: absolute;
+  left: 92.5945763916%;
+  top: 60.6934396723%;
+  background-color: #b38fe3;
+  -webkit-animation-delay: -3.8s;
+          animation-delay: -3.8s;
+}
+.sprinkles .sprinkle39 {
+  position: absolute;
+  left: 34.9955673664%;
+  top: 12.0636984815%;
+  background-color: #be87c5;
+  -webkit-animation-delay: -3.9s;
+          animation-delay: -3.9s;
+}
+.sprinkles .sprinkle40 {
+  position: absolute;
+  left: 29.5739361754%;
+  top: -12.7349322%;
+  background-color: #9d515e;
+  -webkit-animation-delay: -4s;
+          animation-delay: -4s;
+}
+.sprinkles .sprinkle41 {
+  position: absolute;
+  left: 8.7491990724%;
+  top: 68.8924445505%;
+  background-color: #a677be;
+  -webkit-animation-delay: -4.1s;
+          animation-delay: -4.1s;
+}
+.sprinkles .sprinkle42 {
+  position: absolute;
+  left: 54.0817693802%;
+  top: 60.3918475239%;
+  background-color: #f874d5;
+  -webkit-animation-delay: -4.2s;
+          animation-delay: -4.2s;
+}
+.sprinkles .sprinkle43 {
+  position: absolute;
+  left: 24.0561679947%;
+  top: 65.4236342693%;
+  background-color: #da63a1;
+  -webkit-animation-delay: -4.3s;
+          animation-delay: -4.3s;
+}
+.sprinkles .sprinkle44 {
+  position: absolute;
+  left: 33.9819797229%;
+  top: 19.4539862785%;
+  background-color: #d4a16e;
+  -webkit-animation-delay: -4.4s;
+          animation-delay: -4.4s;
+}
+.sprinkles .sprinkle45 {
+  position: absolute;
+  left: 40.5359303939%;
+  top: 72.2307483388%;
+  background-color: #ec60a0;
+  -webkit-animation-delay: -4.5s;
+          animation-delay: -4.5s;
+}
+.sprinkles .sprinkle46 {
+  position: absolute;
+  left: 47.5664806504%;
+  top: 67.1678746539%;
+  background-color: #d6dcaa;
+  -webkit-animation-delay: -4.6s;
+          animation-delay: -4.6s;
+}
+.sprinkles .sprinkle47 {
+  position: absolute;
+  left: 51.5219064766%;
+  top: 78.4823486537%;
+  background-color: #ff7ab8;
+  -webkit-animation-delay: -4.7s;
+          animation-delay: -4.7s;
+}
+.sprinkles .sprinkle48 {
+  position: absolute;
+  left: 30.4278962816%;
+  top: 11.1436716791%;
+  background-color: #d3a177;
+  -webkit-animation-delay: -4.8s;
+          animation-delay: -4.8s;
+}
+.sprinkles .sprinkle49 {
+  position: absolute;
+  left: 32.4488633653%;
+  top: 8.4046401806%;
+  background-color: #c25355;
+  -webkit-animation-delay: -4.9s;
+          animation-delay: -4.9s;
+}
+.sprinkles .sprinkle50 {
+  position: absolute;
+  left: 2.4234335947%;
+  top: 41.7973265428%;
+  background-color: #ffcac0;
+  -webkit-animation-delay: -5s;
+          animation-delay: -5s;
+}
+.sprinkles .sprinkle51 {
+  position: absolute;
+  left: 14.9549459004%;
+  top: 68.5422915891%;
+  background-color: #ffe38d;
+  -webkit-animation-delay: -5.1s;
+          animation-delay: -5.1s;
+}
+.sprinkles .sprinkle52 {
+  position: absolute;
+  left: 93.3399652941%;
+  top: 29.509382387%;
+  background-color: #ff9e63;
+  -webkit-animation-delay: -5.2s;
+          animation-delay: -5.2s;
+}
+.sprinkles .sprinkle53 {
+  position: absolute;
+  left: 98.2943397011%;
+  top: 40.4679953151%;
+  background-color: #e97bae;
+  -webkit-animation-delay: -5.3s;
+          animation-delay: -5.3s;
+}
+.sprinkles .sprinkle54 {
+  position: absolute;
+  left: 72.522172595%;
+  top: 34.589299873%;
+  background-color: #a08ee1;
+  -webkit-animation-delay: -5.4s;
+          animation-delay: -5.4s;
+}
+.sprinkles .sprinkle55 {
+  position: absolute;
+  left: 99.3459927413%;
+  top: 14.4927156682%;
+  background-color: #a3cdc5;
+  -webkit-animation-delay: -5.5s;
+          animation-delay: -5.5s;
+}
+.sprinkles .sprinkle56 {
+  position: absolute;
+  left: 9.8410032203%;
+  top: 77.3685198176%;
+  background-color: #e18270;
+  -webkit-animation-delay: -5.6s;
+          animation-delay: -5.6s;
+}
+.sprinkles .sprinkle57 {
+  position: absolute;
+  left: 93.3656940191%;
+  top: -10.6879523129%;
+  background-color: #afaa9b;
+  -webkit-animation-delay: -5.7s;
+          animation-delay: -5.7s;
+}
+.sprinkles .sprinkle58 {
+  position: absolute;
+  left: 44.093300894%;
+  top: 69.4587385335%;
+  background-color: #ff7c73;
+  -webkit-animation-delay: -5.8s;
+          animation-delay: -5.8s;
+}
+.sprinkles .sprinkle59 {
+  position: absolute;
+  left: 64.6959935749%;
+  top: 75.0624768611%;
+  background-color: #ff8894;
+  -webkit-animation-delay: -5.9s;
+          animation-delay: -5.9s;
+}
+.sprinkles .sprinkle60 {
+  position: absolute;
+  left: 29.0367020727%;
+  top: 45.2835748323%;
+  background-color: #ae9f9f;
+  -webkit-animation-delay: -6s;
+          animation-delay: -6s;
+}
+.sprinkles .sprinkle61 {
+  position: absolute;
+  left: 85.3735296988%;
+  top: 59.5824715045%;
+  background-color: #985b70;
+  -webkit-animation-delay: -6.1s;
+          animation-delay: -6.1s;
+}
+.sprinkles .sprinkle62 {
+  position: absolute;
+  left: 55.6934482085%;
+  top: -12.2754057738%;
+  background-color: #c7b1ce;
+  -webkit-animation-delay: -6.2s;
+          animation-delay: -6.2s;
+}
+.sprinkles .sprinkle63 {
+  position: absolute;
+  left: 16.43657065%;
+  top: 48.7898128912%;
+  background-color: #e5de52;
+  -webkit-animation-delay: -6.3s;
+          animation-delay: -6.3s;
+}
+.sprinkles .sprinkle64 {
+  position: absolute;
+  left: 96.8962781947%;
+  top: -9.7814169777%;
+  background-color: #e066aa;
+  -webkit-animation-delay: -6.4s;
+          animation-delay: -6.4s;
+}
+.sprinkles .sprinkle65 {
+  position: absolute;
+  left: 59.1700188486%;
+  top: 67.8178306283%;
+  background-color: #a899c6;
+  -webkit-animation-delay: -6.5s;
+          animation-delay: -6.5s;
+}
+.sprinkles .sprinkle66 {
+  position: absolute;
+  left: 9.7281770011%;
+  top: -7.9671142307%;
+  background-color: #f1767c;
+  -webkit-animation-delay: -6.6s;
+          animation-delay: -6.6s;
+}
+.sprinkles .sprinkle67 {
+  position: absolute;
+  left: 81.5917290678%;
+  top: 79.9126061874%;
+  background-color: #9ce0bf;
+  -webkit-animation-delay: -6.7s;
+          animation-delay: -6.7s;
+}
+.sprinkles .sprinkle68 {
+  position: absolute;
+  left: 28.9130146444%;
+  top: 55.5272324969%;
+  background-color: #ffca91;
+  -webkit-animation-delay: -6.8s;
+          animation-delay: -6.8s;
+}
+.sprinkles .sprinkle69 {
+  position: absolute;
+  left: 74.7354436996%;
+  top: -14.3773807526%;
+  background-color: #c79154;
+  -webkit-animation-delay: -6.9s;
+          animation-delay: -6.9s;
+}
+.sprinkles .sprinkle70 {
+  position: absolute;
+  left: 58.6305866276%;
+  top: 46.8069168948%;
+  background-color: #ff9da0;
+  -webkit-animation-delay: -7s;
+          animation-delay: -7s;
+}
+.sprinkles .sprinkle71 {
+  position: absolute;
+  left: 58.4706398579%;
+  top: -19.9510941417%;
+  background-color: #ffbf58;
+  -webkit-animation-delay: -7.1s;
+          animation-delay: -7.1s;
+}
+.sprinkles .sprinkle72 {
+  position: absolute;
+  left: 44.3249311373%;
+  top: 61.2528630499%;
+  background-color: #ffde60;
+  -webkit-animation-delay: -7.2s;
+          animation-delay: -7.2s;
+}
+.sprinkles .sprinkle73 {
+  position: absolute;
+  left: 77.7413082271%;
+  top: 51.279229286%;
+  background-color: #e8a769;
+  -webkit-animation-delay: -7.3s;
+          animation-delay: -7.3s;
+}
+.sprinkles .sprinkle74 {
+  position: absolute;
+  left: 94.7696903922%;
+  top: 77.8770509697%;
+  background-color: #b7b65e;
+  -webkit-animation-delay: -7.4s;
+          animation-delay: -7.4s;
+}
+.sprinkles .sprinkle75 {
+  position: absolute;
+  left: 74.9359566071%;
+  top: 43.1336700762%;
+  background-color: #dea3b1;
+  -webkit-animation-delay: -7.5s;
+          animation-delay: -7.5s;
+}
+.sprinkles .sprinkle76 {
+  position: absolute;
+  left: 57.0680486515%;
+  top: 30.5049182464%;
+  background-color: #a58bb5;
+  -webkit-animation-delay: -7.6s;
+          animation-delay: -7.6s;
+}
+.sprinkles .sprinkle77 {
+  position: absolute;
+  left: 15.7255750745%;
+  top: 8.7244415821%;
+  background-color: #dddc8e;
+  -webkit-animation-delay: -7.7s;
+          animation-delay: -7.7s;
+}
+.sprinkles .sprinkle78 {
+  position: absolute;
+  left: 19.4864106847%;
+  top: -0.8016357847%;
+  background-color: #ff8acc;
+  -webkit-animation-delay: -7.8s;
+          animation-delay: -7.8s;
+}
+.sprinkles .sprinkle79 {
+  position: absolute;
+  left: 47.2867425682%;
+  top: 49.7960511987%;
+  background-color: #ff8bdb;
+  -webkit-animation-delay: -7.9s;
+          animation-delay: -7.9s;
+}
+.sprinkles .sprinkle80 {
+  position: absolute;
+  left: 3.2822985675%;
+  top: 40.0718380417%;
+  background-color: #f4e573;
+  -webkit-animation-delay: -8s;
+          animation-delay: -8s;
+}
+.sprinkles .sprinkle81 {
+  position: absolute;
+  left: 16.4969452543%;
+  top: -16.5456486694%;
+  background-color: #e671a2;
+  -webkit-animation-delay: -8.1s;
+          animation-delay: -8.1s;
+}
+.sprinkles .sprinkle82 {
+  position: absolute;
+  left: 40.8570283375%;
+  top: -16.0041971388%;
+  background-color: #d77fb3;
+  -webkit-animation-delay: -8.2s;
+          animation-delay: -8.2s;
+}
+.sprinkles .sprinkle83 {
+  position: absolute;
+  left: 67.2702558062%;
+  top: 3.8403153267%;
+  background-color: #c7c48b;
+  -webkit-animation-delay: -8.3s;
+          animation-delay: -8.3s;
+}
+.sprinkles .sprinkle84 {
+  position: absolute;
+  left: 72.4189871006%;
+  top: 28.3641045727%;
+  background-color: #e7d6c7;
+  -webkit-animation-delay: -8.4s;
+          animation-delay: -8.4s;
+}
+.sprinkles .sprinkle85 {
+  position: absolute;
+  left: 35.2107054421%;
+  top: 42.7521786114%;
+  background-color: #9eb691;
+  -webkit-animation-delay: -8.5s;
+          animation-delay: -8.5s;
+}
+.sprinkles .sprinkle86 {
+  position: absolute;
+  left: 68.0310839874%;
+  top: 17.7116887037%;
+  background-color: #c156c7;
+  -webkit-animation-delay: -8.6s;
+          animation-delay: -8.6s;
+}
+.sprinkles .sprinkle87 {
+  position: absolute;
+  left: 94.7557412321%;
+  top: 74.3345386861%;
+  background-color: #bdb4d4;
+  -webkit-animation-delay: -8.7s;
+          animation-delay: -8.7s;
+}
+.sprinkles .sprinkle88 {
+  position: absolute;
+  left: 68.932074047%;
+  top: 38.8637524999%;
+  background-color: #eea3d6;
+  -webkit-animation-delay: -8.8s;
+          animation-delay: -8.8s;
+}
+.sprinkles .sprinkle89 {
+  position: absolute;
+  left: 45.5202958012%;
+  top: 55.1242694895%;
+  background-color: #e47b5c;
+  -webkit-animation-delay: -8.9s;
+          animation-delay: -8.9s;
+}
+.sprinkles .sprinkle90 {
+  position: absolute;
+  left: 89.2496126373%;
+  top: -8.5126216455%;
+  background-color: #f1c2ab;
+  -webkit-animation-delay: -9s;
+          animation-delay: -9s;
+}
+.sprinkles .sprinkle91 {
+  position: absolute;
+  left: 87.7251673816%;
+  top: -10.256420637%;
+  background-color: #ec518f;
+  -webkit-animation-delay: -9.1s;
+          animation-delay: -9.1s;
+}
+.sprinkles .sprinkle92 {
+  position: absolute;
+  left: 62.4519348455%;
+  top: 25.2704991443%;
+  background-color: #bee27a;
+  -webkit-animation-delay: -9.2s;
+          animation-delay: -9.2s;
+}
+.sprinkles .sprinkle93 {
+  position: absolute;
+  left: 93.4024353847%;
+  top: 79.4763506047%;
+  background-color: #99755d;
+  -webkit-animation-delay: -9.3s;
+          animation-delay: -9.3s;
+}
+.sprinkles .sprinkle94 {
+  position: absolute;
+  left: 93.1654147847%;
+  top: 45.3589016394%;
+  background-color: #ff5ca1;
+  -webkit-animation-delay: -9.4s;
+          animation-delay: -9.4s;
+}
+.sprinkles .sprinkle95 {
+  position: absolute;
+  left: 95.3700110174%;
+  top: 32.5487175445%;
+  background-color: #b981b9;
+  -webkit-animation-delay: -9.5s;
+          animation-delay: -9.5s;
+}
+.sprinkles .sprinkle96 {
+  position: absolute;
+  left: 54.1581914555%;
+  top: -17.7679686442%;
+  background-color: #ffc9dd;
+  -webkit-animation-delay: -9.6s;
+          animation-delay: -9.6s;
+}
+.sprinkles .sprinkle97 {
+  position: absolute;
+  left: 12.6676220322%;
+  top: 10.7802787713%;
+  background-color: #ffde85;
+  -webkit-animation-delay: -9.7s;
+          animation-delay: -9.7s;
+}
+.sprinkles .sprinkle98 {
+  position: absolute;
+  left: 78.2570704716%;
+  top: -17.470739572%;
+  background-color: #daa877;
+  -webkit-animation-delay: -9.8s;
+          animation-delay: -9.8s;
+}
+.sprinkles .sprinkle99 {
+  position: absolute;
+  left: 5.2327498698%;
+  top: 75.0255302486%;
+  background-color: #ffbeb0;
+  -webkit-animation-delay: -9.9s;
+          animation-delay: -9.9s;
+}
+.sprinkles .sprinkle100 {
+  position: absolute;
+  left: 40.4765503134%;
+  top: 17.5894344875%;
+  background-color: #ff9eda;
+  -webkit-animation-delay: -10s;
+          animation-delay: -10s;
+}
+
+input:checked + .card {
+  background-position: 100%;
+}
+input:checked + .card * {
+  -webkit-filter: brightness(98%);
+          filter: brightness(98%);
+}
+input:checked + .card .candle-group .light {
+  -webkit-animation: lightAni 1s infinite, lightDisappearAni 1s forwards;
+          animation: lightAni 1s infinite, lightDisappearAni 1s forwards;
+}
+input:checked + .card .candle-group .smoke:before, input:checked + .card .candle-group .smoke:after {
+  display: block;
+}
+input:checked + .card .candle-group .smoke:before {
+  width: 20px;
+  height: 20px;
+  top: -60%;
+  left: 35%;
+  border-radius: 50%;
+  -webkit-animation: smokeTopAni 1s forwards;
+          animation: smokeTopAni 1s forwards;
+}
+input:checked + .card .candle-group .smoke:after {
+  width: 80px;
+  height: 5px;
+  top: -10%;
+  left: -100%;
+  border-radius: 10px;
+  -webkit-transform-origin: 0% 50%;
+          transform-origin: 0% 50%;
+  -webkit-animation: smokeLeftAni 1s forwards;
+          animation: smokeLeftAni 1s forwards;
+}
+input:checked + .card .candle-group .candle .fire {
+  -webkit-animation: fireAni 1s infinite, fireDisappearAni 1s forwards;
+          animation: fireAni 1s infinite, fireDisappearAni 1s forwards;
+}
+input:checked + .card .boy-head {
+  -webkit-animation: blowHead 1s forwards;
+          animation: blowHead 1s forwards;
+}
+input:checked + .card .face .mouth {
+  -webkit-animation: blowMouth 1s forwards;
+          animation: blowMouth 1s forwards;
+}
+input:checked + .card .body {
+  -webkit-animation: breath 2s infinite, blowBody 1s forwards;
+          animation: breath 2s infinite, blowBody 1s forwards;
+}
+input:checked + .card .sprinkles [class^='sprinkle'] {
+  width: 6px;
+  height: 12px;
+}
+
+@-webkit-keyframes titleAni {
+  60% {
+    -webkit-transform: rotate(-2deg) scale(1.05) translate(2px, 2px);
+            transform: rotate(-2deg) scale(1.05) translate(2px, 2px);
+  }
+}
+
+@keyframes titleAni {
+  60% {
+    -webkit-transform: rotate(-2deg) scale(1.05) translate(2px, 2px);
+            transform: rotate(-2deg) scale(1.05) translate(2px, 2px);
+  }
+}
+@-webkit-keyframes blink {
+  0%,95% {
+    box-shadow: none;
+  }
+  100% {
+    box-shadow: 0px 31px #ffddad inset;
+  }
+}
+@keyframes blink {
+  0%,95% {
+    box-shadow: none;
+  }
+  100% {
+    box-shadow: 0px 31px #ffddad inset;
+  }
+}
+@-webkit-keyframes eyebrowsAni {
+  0%,100% {
+    -webkit-transform: translateY(0%);
+            transform: translateY(0%);
+  }
+  80% {
+    -webkit-transform: translateY(-5%);
+            transform: translateY(-5%);
+  }
+}
+@keyframes eyebrowsAni {
+  0%,100% {
+    -webkit-transform: translateY(0%);
+            transform: translateY(0%);
+  }
+  80% {
+    -webkit-transform: translateY(-5%);
+            transform: translateY(-5%);
+  }
+}
+@-webkit-keyframes blushAni {
+  0%,100% {
+    -webkit-transform: translateY(0%);
+            transform: translateY(0%);
+  }
+  60% {
+    -webkit-transform: translateY(5%);
+            transform: translateY(5%);
+  }
+}
+@keyframes blushAni {
+  0%,100% {
+    -webkit-transform: translateY(0%);
+            transform: translateY(0%);
+  }
+  60% {
+    -webkit-transform: translateY(5%);
+            transform: translateY(5%);
+  }
+}
+@-webkit-keyframes lightAni {
+  60% {
+    -webkit-transform: scale(1.5);
+            transform: scale(1.5);
+  }
+}
+@keyframes lightAni {
+  60% {
+    -webkit-transform: scale(1.5);
+            transform: scale(1.5);
+  }
+}
+@-webkit-keyframes fireAni {
+  0%,100% {
+    -webkit-transform: translate(-40%, -100%) rotate(-28deg);
+            transform: translate(-40%, -100%) rotate(-28deg);
+  }
+  60% {
+    -webkit-transform: translate(-30%, -110%) rotate(-40deg) scaleX(1.3) scaleY(1.1);
+            transform: translate(-30%, -110%) rotate(-40deg) scaleX(1.3) scaleY(1.1);
+    background: #ffc36b;
+  }
+}
+@keyframes fireAni {
+  0%,100% {
+    -webkit-transform: translate(-40%, -100%) rotate(-28deg);
+            transform: translate(-40%, -100%) rotate(-28deg);
+  }
+  60% {
+    -webkit-transform: translate(-30%, -110%) rotate(-40deg) scaleX(1.3) scaleY(1.1);
+            transform: translate(-30%, -110%) rotate(-40deg) scaleX(1.3) scaleY(1.1);
+    background: #ffc36b;
+  }
+}
+@-webkit-keyframes leftHandAni {
+  0%,100% {
+    -webkit-transform: rotate(100deg);
+            transform: rotate(100deg);
+  }
+  60% {
+    -webkit-transform: rotate(80deg);
+            transform: rotate(80deg);
+  }
+}
+@keyframes leftHandAni {
+  0%,100% {
+    -webkit-transform: rotate(100deg);
+            transform: rotate(100deg);
+  }
+  60% {
+    -webkit-transform: rotate(80deg);
+            transform: rotate(80deg);
+  }
+}
+@-webkit-keyframes rightHandAni {
+  0%,100% {
+    -webkit-transform: rotate(-120deg);
+            transform: rotate(-120deg);
+  }
+  60% {
+    -webkit-transform: rotate(-80deg);
+            transform: rotate(-80deg);
+  }
+}
+@keyframes rightHandAni {
+  0%,100% {
+    -webkit-transform: rotate(-120deg);
+            transform: rotate(-120deg);
+  }
+  60% {
+    -webkit-transform: rotate(-80deg);
+            transform: rotate(-80deg);
+  }
+}
+@-webkit-keyframes breath {
+  60% {
+    -webkit-transform: scaleX(1.05);
+            transform: scaleX(1.05);
+  }
+}
+@keyframes breath {
+  60% {
+    -webkit-transform: scaleX(1.05);
+            transform: scaleX(1.05);
+  }
+}
+@-webkit-keyframes breathMouth {
+  60% {
+    -webkit-transform: rotate(-5deg) scale(1.1);
+            transform: rotate(-5deg) scale(1.1);
+  }
+}
+@keyframes breathMouth {
+  60% {
+    -webkit-transform: rotate(-5deg) scale(1.1);
+            transform: rotate(-5deg) scale(1.1);
+  }
+}
+@-webkit-keyframes sprinkleAni {
+  0%,100% {
+    opacity: 0;
+  }
+  70% {
+    opacity: 1;
+  }
+  100% {
+    -webkit-transform: translate(50px, 250px);
+            transform: translate(50px, 250px);
+  }
+}
+@keyframes sprinkleAni {
+  0%,100% {
+    opacity: 0;
+  }
+  70% {
+    opacity: 1;
+  }
+  100% {
+    -webkit-transform: translate(50px, 250px);
+            transform: translate(50px, 250px);
+  }
+}
+@-webkit-keyframes blowMouth {
+  30% {
+    -webkit-transform: rotate(-5deg) scale(1.5);
+            transform: rotate(-5deg) scale(1.5);
+  }
+  70% {
+    -webkit-transform: rotate(-5deg) scale(0.2);
+            transform: rotate(-5deg) scale(0.2);
+  }
+  100% {
+    -webkit-transform: rotate(-5deg) scale(0.3);
+            transform: rotate(-5deg) scale(0.3);
+  }
+}
+@keyframes blowMouth {
+  30% {
+    -webkit-transform: rotate(-5deg) scale(1.5);
+            transform: rotate(-5deg) scale(1.5);
+  }
+  70% {
+    -webkit-transform: rotate(-5deg) scale(0.2);
+            transform: rotate(-5deg) scale(0.2);
+  }
+  100% {
+    -webkit-transform: rotate(-5deg) scale(0.3);
+            transform: rotate(-5deg) scale(0.3);
+  }
+}
+@-webkit-keyframes blowHead {
+  0%,100% {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+  30% {
+    -webkit-transform: scale(1.05);
+            transform: scale(1.05);
+  }
+  70% {
+    -webkit-transform: scale(0.95);
+            transform: scale(0.95);
+  }
+}
+@keyframes blowHead {
+  0%,100% {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+  30% {
+    -webkit-transform: scale(1.05);
+            transform: scale(1.05);
+  }
+  70% {
+    -webkit-transform: scale(0.95);
+            transform: scale(0.95);
+  }
+}
+@-webkit-keyframes blowBody {
+  0%,100% {
+    width: 90%;
+    height: 80%;
+  }
+  30% {
+    width: 100%;
+    height: 80%;
+    left: -5%;
+  }
+  70% {
+    width: 80%;
+    height: 80%;
+    left: 1%;
+  }
+}
+@keyframes blowBody {
+  0%,100% {
+    width: 90%;
+    height: 80%;
+  }
+  30% {
+    width: 100%;
+    height: 80%;
+    left: -5%;
+  }
+  70% {
+    width: 80%;
+    height: 80%;
+    left: 1%;
+  }
+}
+@-webkit-keyframes lightDisappearAni {
+  0%,69% {
+    opacity: 1;
+    width: 100px;
+    height: 100px;
+  }
+  70%,100% {
+    opacity: 0;
+    width: 0px;
+    height: 0px;
+  }
+}
+@keyframes lightDisappearAni {
+  0%,69% {
+    opacity: 1;
+    width: 100px;
+    height: 100px;
+  }
+  70%,100% {
+    opacity: 0;
+    width: 0px;
+    height: 0px;
+  }
+}
+@-webkit-keyframes fireDisappearAni {
+  0%,69% {
+    opacity: 1;
+  }
+  70% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 0;
+    display: none;
+  }
+}
+@keyframes fireDisappearAni {
+  0%,69% {
+    opacity: 1;
+  }
+  70% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 0;
+    display: none;
+  }
+}
+@-webkit-keyframes smokeTopAni {
+  0%,60%,100% {
+    opacity: 0;
+    -webkit-transform: scale(0);
+            transform: scale(0);
+  }
+  70% {
+    opacity: 1;
+    -webkit-transform: scale(1.2);
+            transform: scale(1.2);
+    top: -70%;
+    left: 20%;
+  }
+  100% {
+    top: -90%;
+    left: 0%;
+  }
+}
+@keyframes smokeTopAni {
+  0%,60%,100% {
+    opacity: 0;
+    -webkit-transform: scale(0);
+            transform: scale(0);
+  }
+  70% {
+    opacity: 1;
+    -webkit-transform: scale(1.2);
+            transform: scale(1.2);
+    top: -70%;
+    left: 20%;
+  }
+  100% {
+    top: -90%;
+    left: 0%;
+  }
+}
+@-webkit-keyframes smokeLeftAni {
+  0%,60%,100% {
+    opacity: 0;
+    -webkit-transform: scaleX(0);
+            transform: scaleX(0);
+  }
+  70% {
+    left: -120%;
+    opacity: 1;
+    -webkit-transform: scaleX(1.1);
+            transform: scaleX(1.1);
+  }
+  100% {
+    left: -150%;
+  }
+}
+@keyframes smokeLeftAni {
+  0%,60%,100% {
+    opacity: 0;
+    -webkit-transform: scaleX(0);
+            transform: scaleX(0);
+  }
+  70% {
+    left: -120%;
+    opacity: 1;
+    -webkit-transform: scaleX(1.1);
+            transform: scaleX(1.1);
+  }
+  100% {
+    left: -150%;
+  }
+}
